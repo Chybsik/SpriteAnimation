@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+//Класс SpriteSheet содержит изображение со всеми спрайтами анимации
 public class SpriteSheet {
 
     private  BufferedImage spriteSheet;
@@ -23,13 +24,8 @@ public class SpriteSheet {
         }
     }
 
+    //Метод getSprite возвращает спрайт на определенной позиции
     public BufferedImage getSprite(int xGrid, int yGrid) {
-
-        if (spriteSheet == null) {
-            
-        }
-
         return spriteSheet.getSubimage(xGrid * TILE_SIZE, yGrid * TILE_SIZE, TILE_SIZE, TILE_SIZE);
     }
-
 }

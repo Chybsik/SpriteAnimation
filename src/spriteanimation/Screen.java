@@ -6,7 +6,6 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 import javax.swing.JPanel;
@@ -35,19 +34,19 @@ public class Screen extends JPanel implements KeyListener {
         setFocusable(true);
 
         try {
-            background = ImageIO.read(new File("C:\\Users\\Timur\\Desktop\\background.png"));
+            background = ImageIO.read(new File("D:\\temp\\background.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        img = new BufferedImage(256, 256, BufferedImage.TYPE_INT_RGB);    //Result image
+        img = new BufferedImage(256, 256, BufferedImage.TYPE_INT_RGB);    //Результирующее изображение
         for (int y = 0; y < img.getHeight(); y++) {
             for (int x = 0; x < img.getWidth(); x++) {
                 img.setRGB(x, y, background.getRGB(x, y));
             }
         }
-        walkingRight = new BufferedImage[]{sp.getSprite(0, 2), sp.getSprite(2, 2)};
-        walkingRight_mask = new BufferedImage[]{sp_mask.getSprite(0, 2), sp_mask.getSprite(2, 2)};
+        walkingRight = new BufferedImage[]{sp.getSprite(0, 0), sp.getSprite(1, 0)};
+        walkingRight_mask = new BufferedImage[]{sp_mask.getSprite(0, 0), sp_mask.getSprite(1, 0)};
         SPRITE_SIZE = 32;
     }
 
